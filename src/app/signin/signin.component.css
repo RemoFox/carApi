@@ -1,0 +1,27 @@
+
+.container-fluid{
+  width: 100%;
+
+  height: 100vh;
+}
+
+img{
+width: 90%;
+  display: flex;
+  margin: auto;
+}
+/* .content{
+  margin: auto;
+  height: 100vh;
+
+} */
+form
+{
+  background-color: #1572d31a;
+  color: #0b5ed7;
+  border:3px solid #1572d31a;
+  padding:10px 20px;
+
+
+}
+

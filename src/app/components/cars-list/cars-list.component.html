@@ -1,0 +1,36 @@
+<section>
+  <div class="container">
+    <h2 class="text-center my-2 p-2">
+      Most popular cars rental deals
+    </h2>
+
+      <input type="text" placeholder="search..." class="form-control flex-nowrap shadow "[(ngModel)]="searchtext" >
+ <!-- <div *ngIf="carsList.length==0"><img src="assets/images/not-found/404-not-found.png "alt=""></div> -->
+    <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let item of carsList |search:searchtext |paginate:{
+               itemsPerPage: 12,
+               currentPage: pageNumber
+            } ">
+                   <div class="card-item p-3 border-3 shadow my-3">
+                    <img class="w-100" src="assets/images/peg.png" alt="">
+                    <div class="card-info">
+                         <h5>
+                          <!-- id : {{item.id}}-->
+                          <br>
+                          Name : {{item.make}}
+                          <br>
+                          model : {{item.model}}
+                          <br>
+                          color : {{item.color}}
+                         </h5>
+                         <button class="btn btn-primary w-100" [routerLink]="['/cars',item.id]">details</button>
+                    </div>
+                   </div>
+
+            </div>
+
+            <pagination-controls (pageChange)="pageNumber = $event"
+            class="text-center p-4 m-auto text-center"></pagination-controls>
+    </div>
+  </div>
+</section>
